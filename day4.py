@@ -1,8 +1,10 @@
 # AoC 2024 Day 4
 
+from util import *
+
 # Part 1
 
-with open('day4.txt') as f:
+with open_input(4) as f:
     inp = f.readlines()
 
 width = len(inp[0])
@@ -31,7 +33,7 @@ for i in range(height):
             result += 1
 
 
-print('Answer for part 1:', result)
+result1(result)
 
 # Part 2
 
@@ -46,6 +48,6 @@ for i in range(1, height - 1):
         if (l1 == mas or l1 == sam) and (l2 == mas or l2 == sam):
             result += 1
 
-print('Answer for part 2:', result)
+result2(result)
 
 # Aaaah this was not my nicest code...

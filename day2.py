@@ -1,5 +1,7 @@
 # AoC 2024 Day 2
 
+from util import *
+
 # Part 1
 
 def is_safe_report(report: list) -> bool:
@@ -21,7 +23,7 @@ def is_safe_report(report: list) -> bool:
     return True
 
 
-with open('day2.txt', 'r') as f:
+with open_input(2) as f:
     reports = list(map(lambda line: list(
         map(int, line.split())), f.readlines()))
 

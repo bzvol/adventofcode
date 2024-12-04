@@ -1,5 +1,6 @@
 # AoC 2024 Day 3
 
+from util import *
 import re
 from math import prod
 
@@ -9,13 +10,13 @@ from math import prod
 def eval_mul(op): return prod(map(int, op[4:-1].split(',')))
 
 
-with open('day3.txt') as f:
+with open_input(3) as f:
     memory = f.read()
 
 ops = re.findall(r"mul\(\d+,\d+\)", memory)
 result = sum(map(eval_mul, ops))
 
-print('Answer for part 1:', result)
+result1(result)
 
 # Part 2
 
@@ -31,4 +32,4 @@ for mul_op, do_op, dont_op in ops:
     elif do:
         result += eval_mul(mul_op)
 
-print('Answer for part 2:', result)
+result2(result)
